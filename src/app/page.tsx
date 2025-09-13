@@ -1,9 +1,39 @@
+"use client";
+
 import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
+  const { user, isLoaded } = useUser();
+  const router = useRouter();
+
+  // Redirect to dashboard if user is already logged in
+  useEffect(() => {
+    if (isLoaded && user) {
+      router.push("/dashboard");
+    }
+  }, [isLoaded, user, router]);
+
+  // Show loading while checking authentication
+  if (!isLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-green-600 mx-auto mb-4"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Don't render the landing page if user is logged in (will redirect)
+  if (user) {
+    return null;
+  }
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
       <div className="container mx-auto px-4 py-8">

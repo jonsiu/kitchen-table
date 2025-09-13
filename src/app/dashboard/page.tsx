@@ -1,12 +1,16 @@
+"use client";
+
 import { UserButton, useUser } from "@clerk/nextjs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import { useUserSync } from "@/hooks/useUserSync";
 
 export default function DashboardPage() {
   const { user, isLoaded } = useUser();
+  const { isUserSynced } = useUserSync();
 
-  if (!isLoaded) {
+  if (!isLoaded || !isUserSynced) {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
@@ -81,9 +85,11 @@ export default function DashboardPage() {
                   <span className="font-medium">Fridge, Pantry, Freezer</span>
                 </div>
               </div>
-              <Button className="w-full mt-4" variant="outline">
-                View Inventory
-              </Button>
+              <Link href="/inventory">
+                <Button className="w-full mt-4" variant="outline">
+                  View Inventory
+                </Button>
+              </Link>
             </CardContent>
           </Card>
 
