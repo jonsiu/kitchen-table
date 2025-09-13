@@ -7,8 +7,8 @@ import { ConvexClientProvider } from "@/lib/convex-provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Meal Prep App",
-  description: "Smart meal planning with AI-powered recipe generation",
+  title: "Kitchen Table",
+  description: "Smart meal planning that brings families together around food. Generate AI-powered recipes, track ingredients, and plan nutritious meals.",
 };
 
 export default function RootLayout({

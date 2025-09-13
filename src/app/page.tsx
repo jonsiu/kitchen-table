@@ -11,9 +11,9 @@ export default function HomePage() {
         <header className="flex justify-between items-center mb-12">
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">MP</span>
+              <span className="text-white font-bold text-sm">KT</span>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">Meal Prep</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Kitchen Table</h1>
           </div>
           <div className="flex items-center space-x-4">
             <SignInButton mode="modal">

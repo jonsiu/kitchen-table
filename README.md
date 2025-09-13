@@ -1,6 +1,6 @@
-# Meal Prep App
+# Kitchen Table
 
-A smart meal planning application that generates AI-powered recipes based on available ingredients, tracks expiry dates, and supports personalized nutrition goals.
+Smart meal planning that brings families together around food. Generate AI-powered recipes, track ingredients, and plan nutritious meals.
 
 ## 🚀 Features
 

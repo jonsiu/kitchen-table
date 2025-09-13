@@ -38,9 +38,9 @@ export default function DashboardPage() {
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">MP</span>
+                <span className="text-white font-bold text-sm">KT</span>
               </div>
-              <h1 className="text-xl font-bold text-gray-900">Meal Prep Dashboard</h1>
+              <h1 className="text-xl font-bold text-gray-900">Kitchen Table Dashboard</h1>
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-600">Welcome, {user.firstName || user.emailAddresses[0].emailAddress}</span>
